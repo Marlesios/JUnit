@@ -42,7 +42,7 @@ public class testmain {
         File file = folder.newFile("file.dat");
         Main.makeFile(file);
 
-        Main.saveGame(one,"file.dat");
+        Main.saveGame(one,file.getAbsolutePath());
         Assertions.assertTrue(file.exists());
         Assertions.assertTrue(file.canRead());
         Assertions.assertTrue(file.canWrite());
@@ -50,5 +50,6 @@ public class testmain {
         System.out.println("файл можно прочитать и можно записать");
 
 
+      file.deleteOnExit();
     }
 }
