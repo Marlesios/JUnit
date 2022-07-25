@@ -65,15 +65,15 @@ public class Main {
             System.out.println(ex.getMessage());
         }
 
-        //обьявление GameProgress
-
-        GameProgress first = new GameProgress(100, 1, 25, 100.50);
-        GameProgress second = new GameProgress(90, 2, 24, 98.5);
-        GameProgress third = new GameProgress(200, 3, 45, 3000.33);
+//        //обьявление GameProgress
+//
+//        GameProgress first = new GameProgress(100, 1, 25, 100.50);
+//        GameProgress second = new GameProgress(90, 2, 24, 98.5);
+//        GameProgress third = new GameProgress(200, 3, 45, 3000.33);
         //используем метод для записи прогресса
-        saveGame(first, "E://Games1/savegames/saveFirst.dat");
-        saveGame(second, "E://Games1/savegames/saveSecond.dat");
-        saveGame(third, "E://Games1/savegames/saveThird.dat");
+        saveGame(new GameProgress(100, 1, 25, 100.50), "E://Games1/savegames/saveFirst.dat");
+        saveGame(new GameProgress(90, 2, 24, 98.5), "E://Games1/savegames/saveSecond.dat");
+        saveGame(new GameProgress(200, 3, 45, 3000.33), "E://Games1/savegames/saveThird.dat");
 
         //создание List для маршрутов файлов архивации
         List<String> dat = new ArrayList<>();
