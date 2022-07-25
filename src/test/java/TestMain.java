@@ -26,7 +26,7 @@ public class TestMain {
 
     @Test
     @DisplayName("тест на создание директории")
-    public void MkDirectoryTest() throws IOException{
+    public void makeDirectoryTest() throws IOException{
         temporaryFolder.create();
         File directory = temporaryFolder.newFile("work");
         Main.makeDirectory(directory);
