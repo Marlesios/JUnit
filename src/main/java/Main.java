@@ -10,62 +10,40 @@ public class Main {
         StringBuilder sb = new StringBuilder();
         List<File> game = new ArrayList<>();
         List<File> files = new ArrayList<>();
-        // sadasfadfadf
-
-        //Главный директорий
-        File Games = new File("E://Games1");
-        //под директории в главный
-        File src = new File("E://Games1/src");
-        File res = new File("E://Games1/res");
-        File savegames = new File("E://Games1/savegames");
-        File temp = new File("E://Games1/temp");
-
-        //директории в папку src
-        File main = new File(src, "main");
-        File test = new File(src, "test");
-
-        //Файлы в папку /games/src/main
-        File Main_java = new File(main, "Main.java");
-        File Java_utils = new File(main, "Utils.java");
-
-        //Файлы в /Games/res
-        File drawables = new File(res, "drawables");
-        File vectors = new File(res, "vectors");
-        File icons = new File(res, "icons");
 
         //temp.txt для сохранений логов
-        File temp_txt = new File(temp, "temp.txt");
+        File temp_txt = new File("E://Games1/temp", "temp.txt");
 
-        game.add(Games);
-        game.add(src);
-        game.add(res);
-        game.add(savegames);
-        game.add(temp);
+        game.add(new File("E://Games1"));
+        game.add(new File("E://Games1/src"));
+        game.add(new File("E://Games1/res"));
+        game.add(new File("E://Games1/savegames"));
+        game.add(new File("E://Games1/temp"));
 
         //добавляем в src
-        game.add(main);
-        game.add(test);
+        game.add(new File("E://Games1/src", "main"));
+        game.add(new File("E://Games1/src", "test"));
 
         //добавляем в папку /games/src/main
-        files.add(Main_java);
-        files.add(Java_utils);
+        files.add(new File("E://Games1/src/main/Main.java"));
+        files.add(new File("E://Games1/src/main/Utils.java"));
 
         //добавляем в /Games/res
-        game.add(drawables);
-        game.add(vectors);
-        game.add(icons);
+        game.add(new File("E://Games1/res", "drawables"));
+        game.add(new File("E://Games1/res", "vectors"));
+        game.add(new File("E://Games1/res", "icons"));
 
         //temp.txt
-        files.add(temp_txt);
+        files.add(new File("E://Games1/temp", "temp.txt"));
 
         //цикл для добавления директорий
         for (File file : game) {
-            //makeDirectory(file);
+            makeDirectory(file);
             sb.append(makeDirectory(file));
         }
         //цикл для добавлений файлов
         for (File file : files) {
-            // makeFile(file);
+             makeFile(file);
             sb.append(makeFile(file));
         }
 
